@@ -19,6 +19,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - run: npm install
     - id: auth
       uses: google-github-actions/auth@v0.4.0
       with:

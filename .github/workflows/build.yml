@@ -2,12 +2,13 @@ name: Deploy Google Cloud Function
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
     paths-ignore: 
       - '**/README.md'
+      - '**/LICENSE'
       - '**/*.yml'
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
   workflow_dispatch:
 
 env:

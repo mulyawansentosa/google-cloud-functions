@@ -12,7 +12,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-var port = process.env.PORT || 3006;
+var port = 3006;
 
 app.listen(port);
 

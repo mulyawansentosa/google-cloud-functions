@@ -34,10 +34,6 @@ jobs:
       with:
         name: drillresults
         runtime: nodejs14
-
-    - name: Make the url aunthenticated
-      run: |
-          gcloud functions add-iam-policy-binding drillresults --member="allUsers" --role="roles/cloudfunctions.invoker"
     
     - name: Test the URL
       run: curl "${{ steps.deploy.outputs.url }}"

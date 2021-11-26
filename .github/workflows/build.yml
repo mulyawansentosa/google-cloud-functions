@@ -19,13 +19,27 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '14'
     - run: npm install
-    - id: auth
+
+    - name: Auth for deployment
+      id: auth
       uses: google-github-actions/auth@v0.4.0
       with:
         credentials_json: ${{ secrets.GCP_CREDENTIALS }}
-    - id: deploy
+
+    - name: Deploy cloud function
+      id: deploy
       uses: google-github-actions/deploy-cloud-functions@v0.6.0
       with:
         name: drillresults
         runtime: nodejs14
+
+    - name: Make the url aunthenticated
+      run: |
+          gcloud functions add-iam-policy-binding drillresults --member="allUsers" --role="roles/cloudfunctions.invoker"
+    
+    - name: Test the URL
+      run: curl "${{ steps.deploy.outputs.url }}"

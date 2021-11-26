@@ -1,6 +1,6 @@
 // GET
 exports.getDrillResults = function(req, res) {
-  var drillId = req.params.id;
+  console.log("Get Drill Results");
 
   // TODO: load drill results and send back
 
@@ -13,7 +13,9 @@ exports.getDrillResults = function(req, res) {
 
 // GET
 exports.getDrillResult = function(req, res) {
+  console.log("Get Drill Result");
   var drillId = req.params.id;
+  console.log("Drill Id: " + drillId);
 
   // TODO: load drill result and send back
 
@@ -26,8 +28,12 @@ exports.getDrillResult = function(req, res) {
 
 // PUT
 exports.updateDrillResult = function(req, res) {
+  console.log("Update Drill Result");
   var drillId = req.params.id;
-  let drillResult = req.body;
+  var drillRequest = req.body;
+
+  console.log("Drill Id: " + drillId);
+  console.log("Drill Request: " + drillRequest);
 
   // TODO: update drill result
 
@@ -36,7 +42,9 @@ exports.updateDrillResult = function(req, res) {
 
 // DELETE
 exports.deleteDrillResult = function(req, res) {
+  console.log("Delete Drill Result");
   var drillId = req.params.id;
+  console.log("Drill Id: " + drillId);
 
   // TODO: delete drill result
 
@@ -45,12 +53,14 @@ exports.deleteDrillResult = function(req, res) {
 
 // POST
 exports.createDrillResult = function(req, res) {
-  let drillResult = req.body;
+  console.log("Create Drill Result");
+  var drillRequest = req.body;
+  console.log("Drill Request: " + drillRequest);
 
   // TODO: delete drill result
 
-  let createdDrillResultId = 1;
-  let port = process.env.PORT || 3006;
+  var createdDrillResultId = 1;
+  var port = process.env.PORT || 3006;
   res.set('Location', 'localhost:' + port + "/v1/drillresult/" + createdDrillResultId);
   res.status(201).send();
 };

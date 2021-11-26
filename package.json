@@ -4,7 +4,7 @@
   "description": "A pretty generic google cloud function",
   "main": "index.js",
   "scripts": {
-    "start": "PORT=3000 nodemon index.js",
+    "start": "nodemon index.js",
     "deploy": "gcloud functions deploy courses --trigger-http"
   },
   "author": "Chelsea Farley",

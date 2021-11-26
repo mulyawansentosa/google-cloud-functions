@@ -20,4 +20,4 @@ routes(app);
 
 console.log('Backend server started on: ' + port);
 
-exports.application = app;
+exports.drillresults = app;

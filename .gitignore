@@ -161,3 +161,6 @@ dist
 !.vscode/*.code-snippets
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,firebase,node
+
+# Ignore serviceAccount.json. This should be generated in firebase console.
+controllers/serviceAccount.json

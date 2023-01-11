@@ -1,5 +1,5 @@
 steps:
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['gcloud', 'functions', 'deploy', '${_NAME}', '--runtime=nodejs14', '--trigger-http', '--allow-unauthenticated']
+  args: ['beta', 'functions', 'deploy', '${_NAME}', '--runtime=nodejs14', '--trigger-http', '--allow-unauthenticated']
 options:
   logging: CLOUD_LOGGING_ONLY
